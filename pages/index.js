@@ -1,6 +1,11 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
 const Home = () => {
-  const btnHandleler = () => {};
+  const router = useRouter();
+  const btnHandleler = () => {
+    router.push("/product");
+    router.replace("/product");
+  };
   return (
     <div>
       <h1>home</h1>
@@ -9,7 +14,7 @@ const Home = () => {
         <span>about</span>
       </Link>
       <hr></hr>
-      <button>go to </button>
+      <button onClick={btnHandleler}>go to </button>
     </div>
   );
 };
